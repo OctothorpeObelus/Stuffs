@@ -59,17 +59,22 @@ var letters = {
     "z": "🆉",
 }
 var input = prompt("Enter some text:") || "null";
-var inputLower = {};
+//var inputLower = {};
 var keys = Object.keys(replacements);
 
-input = input.split(" ");
-document.write(input);
+/*for (var b in input) {
+	inputLower[b] = input[b].toLowerCase();
+}*/
+input = input.replace(/[^\w\s]|_/g, function ($1) { return ' ' + $1 + ' ';}).replace(/[ ]+/g, ' ').split(' ');
+
+//document.write(input);
 for (i = 0; i < input.length; i++) {
 	for (j = 0; j < keys.length; j++) {
-    	if (input[i].toLowerCase() == keys[j]) {
-        	
+    	if (input[i].toLowerCase() == keys[j] || input[i].toLowerCase() == keys[j]) {
+        	input[i] = replacements[input[i]];
         	//document.write("\nFound one! It is at: i: " + i);
+            
         }
     }
 }
-document.write(input);
+document.write(input.join(" "));
