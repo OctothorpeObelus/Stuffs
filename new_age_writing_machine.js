@@ -1,3 +1,4 @@
+<script>
 var replacements = {
 	"one": "👆",
     "two": "2",
@@ -19,7 +20,7 @@ var replacements = {
     "nibba": "ni🅱🅱a",
     "smoke": "🌪",
     "weed": "🍁",
-    "black man": "☎",
+    "black": "☎",
     "gay": "( ͡° ͜ʖ ͡°)",
     "family": "👪",
     "furry": "Rashaad🦊Thomas",
@@ -61,20 +62,25 @@ var letters = {
 var input = prompt("Enter some text:") || "null";
 //var inputLower = {};
 var keys = Object.keys(replacements);
+var letterKeys = Object.keys(letters);
+var letterScramble = input.split("");
 
-/*for (var b in input) {
-	inputLower[b] = input[b].toLowerCase();
-}*/
 input = input.replace(/[^\w\s]|_/g, function ($1) { return ' ' + $1 + ' ';}).replace(/[ ]+/g, ' ').split(' ');
 
 //document.write(input);
 for (i = 0; i < input.length; i++) {
 	for (j = 0; j < keys.length; j++) {
-    	if (input[i].toLowerCase() == keys[j] || input[i].toLowerCase() == keys[j]) {
+    	if (input[i].toLowerCase() == keys[j]) {
         	input[i] = replacements[input[i]];
         	//document.write("\nFound one! It is at: i: " + i);
             
         }
     }
+    for (j = 0; j < letterKeys.length; j++) {
+    	if (math.random > 0.5) {
+        	
+        }
+    }
 }
 document.write(input.join(" "));
+</script>
