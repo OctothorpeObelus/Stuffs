@@ -1,4 +1,3 @@
-<script>
 var replacements = {
 	"one": "👆",
     "two": "2",
@@ -62,8 +61,9 @@ var letters = {
 var input = prompt("Enter some text:") || "null";
 //var inputLower = {};
 var keys = Object.keys(replacements);
-var letterKeys = Object.keys(letters);
 var letterScramble = input.split("");
+var letterToReplace = "";
+var rand = 0;
 
 input = input.replace(/[^\w\s]|_/g, function ($1) { return ' ' + $1 + ' ';}).replace(/[ ]+/g, ' ').split(' ');
 
@@ -76,11 +76,12 @@ for (i = 0; i < input.length; i++) {
             
         }
     }
-    for (j = 0; j < letterKeys.length; j++) {
-    	if (math.random > 0.5) {
-        	
+    for (j = 0; j < letters.length; j++) {
+    	if (Math.random > 0.3) {
+        	rand = Math.round(Math.random + 1)*j;
+            letterToReplace = input[j].charAt(rand);
+            input[j] = input[j].substring(0, rand - 1) + letters[rand] + input[j].substring(rand, input[j].length-1);
         }
     }
 }
 document.write(input.join(" "));
-</script>
