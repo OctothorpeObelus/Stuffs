@@ -19,7 +19,7 @@ var replacements = {
     "nibba": "ni🅱🅱a",
     "smoke": "🌪",
     "weed": "🍁",
-    "black": "☎",
+    "black": "🌚",
     "gay": "( ͡° ͜ʖ ͡°)",
     "family": "👪",
     "furry": "Rashaad🦊Thomas",
@@ -28,9 +28,19 @@ var replacements = {
     "lol": "🍭",
     "the": "teh",
     "in": "on",
-    "on": "in"
+    "on": "in",
+    "happy": "😊",
+    "embarrassed"; "😅",
+    "laughing", "lol",
+    "lol": "😂",
+    "sad": "☹",
+    "finger": "flip",
+    "flip": "🖕",
+    "lie": "lye",
+    "lye": "lying",
+    "lying": "🤞"
 }
-var letters = {
+/*var letters = {
     "a": "🅰",
     "b": "🅱",
     "c": "🅲",
@@ -57,13 +67,12 @@ var letters = {
     "x": "🆇",
     "y": "🆈",
     "z": "🆉",
-}
+}*/
 var input = prompt("Enter some text:") || "null";
-//var inputLower = {};
 var keys = Object.keys(replacements);
-var letterScramble = input.split("");
-var letterToReplace = "";
-var rand = 0;
+//var letterScramble = input.split("");
+//var letterToReplace = "";
+//var rand = 0;
 
 input = input.replace(/[^\w\s]|_/g, function ($1) { return ' ' + $1 + ' ';}).replace(/[ ]+/g, ' ').split(' ');
 
@@ -74,13 +83,6 @@ for (i = 0; i < input.length; i++) {
         	input[i] = replacements[input[i]];
         	//document.write("\nFound one! It is at: i: " + i);
             
-        }
-    }
-    for (j = 0; j < letters.length; j++) {
-    	if (Math.random > 0.3) {
-        	rand = Math.round(Math.random + 1)*j;
-            letterToReplace = input[j].charAt(rand);
-            input[j] = input[j].substring(0, rand - 1) + letters[rand] + input[j].substring(rand, input[j].length-1);
         }
     }
 }
