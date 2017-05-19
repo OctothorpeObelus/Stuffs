@@ -3,3 +3,4 @@
 
 This includes:
 - Caesar's Cipher
+- New Age Writing Machine (Works, working on extra features)
