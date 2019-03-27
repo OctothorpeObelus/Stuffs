@@ -1,4 +1,4 @@
-def encode(message): #123456789
+def encode(message):
   msg=list(message) #Split message into characters
   msgout=[] #Instantiate encoded message
   for i in range(len(msg)):
@@ -6,4 +6,6 @@ def encode(message): #123456789
       msgout.append(msg[i])
     else:
       msgout.insert(0,msg[i])
-  return "".join(msgout) #864213579
+  for i in range(len(msgout)):
+    msgout[i] = chr(ord(msgout[i]) + 3)
+  return "".join(msgout)
