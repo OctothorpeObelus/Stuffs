@@ -1,3 +1,5 @@
+import math
+
 def encode(message): #123456789
   msg=list(message) #Split message into characters
   msgout=[] #Instantiate encoded message
