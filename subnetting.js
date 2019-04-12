@@ -31,6 +31,7 @@ function subnettable(hosts, table) {
     addresses.push(bradd)
   }
 
+  let headerlen = ("Class: " + netclass + "\n# of Subnets: " + subnets + "\nCIDR Notation: " + cidr + "\nMN: " + mn).length
   console.log("Class: " + netclass + "\n# of Subnets: " + subnets + "\nCIDR Notation: " + cidr + "\nMN: " + mn)
 
   //Parsing the Matrix
@@ -38,5 +39,5 @@ function subnettable(hosts, table) {
   for (let i = 0; i < addresses[0].length; i++) {
     tableout += " "+addresses[0][i]+" | "+addresses[1][i]+" | "+addresses[2][i]+" | "+addresses[3][i]+" \n"
   }
-  console.log(tableout)
+  console.log(tableout.substring(0, 2000-headerlen-6))
 }
