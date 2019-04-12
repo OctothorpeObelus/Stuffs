@@ -18,5 +18,3 @@ function subnettable(hosts, mode, table) {
 
   console.log("Class: " + netclass + "\n# of Subnets: " + subnets + "\nCIDR Notation: " + cidr + "\nMN: " + mn)
 }
-
-subnettable(34, 1)
