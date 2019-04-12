@@ -24,7 +24,6 @@ function subnettable(hosts, table) {
         bradd[sn] = mn*sn+mn-1
         sn++
       }
-
     }
     addresses.push(snadd)
     addresses.push(gwadd)
